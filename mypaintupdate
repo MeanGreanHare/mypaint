@@ -1,0 +1,10 @@
+#!/bin/bash
+# MyPaint Updater
+
+scons --clean
+git pull
+git submodule update --init --force
+scons
+scons prefix=/usr/local install
+
+echo "DONE"
